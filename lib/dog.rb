@@ -41,8 +41,8 @@ class Dog
     #binding.pry 
   end 
   
-  def self.create(attribute) 
-    dog = Dog.new(attribute)
+  def self.create(name:, breed:) 
+    dog = Dog.new(name: name, breed: breed)
     dog.save
     dog 
   end
@@ -61,7 +61,7 @@ class Dog
     if dog 
       self.new_from_db(dog)
     else 
-      self.create(name, breed)
+      self.create(name: name, breed: breed)
     end 
   end 
   

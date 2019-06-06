@@ -42,7 +42,7 @@ class Dog
   end 
   
   def self.create(name:, breed:) 
-    dog = Dog.new(attribute)
+    dog = Dog.new(name: name, breed: breed)
     dog.save
     dog 
   end
@@ -61,7 +61,7 @@ class Dog
     if dog 
       self.new_from_db(dog)
     else 
-      self.create(:name => name, :breed => breed)
+      self.create(name: name, breed: breed)
     end 
   end 
   

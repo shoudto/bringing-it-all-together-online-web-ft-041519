@@ -45,5 +45,17 @@ class Dog
     dog = Dog.new(attribute)
     dog.save
     dog 
+  end
+  
+  def self.find_by_id(id)
+    sql = "SELECT * FROM dogs WHERE id = ?"
+    result = DB[:conn].execute(sql, id)[0]
+    Dog.new(id: result[0], name: result[1], breed: result[2])
+    #binding.pry 
+  end
+  
+  def self.find_or_create_by(name:, breed:)
+    sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
+    
   end 
 end 

@@ -61,7 +61,7 @@ class Dog
     if dog 
       self.new_from_db(dog)
     else 
-      self.create(name, breed)
+      self.create(:name, :breed)
     end 
   end 
   
